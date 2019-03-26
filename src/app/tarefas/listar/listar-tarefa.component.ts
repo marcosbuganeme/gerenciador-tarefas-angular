@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Tarefa } from '../shared/tarefa.model';
+import { TarefaService } from '../shared/tarefa.service';
+
 @Component({
   selector: 'app-listar-tarefa',
   templateUrl: './listar-tarefa.component.html',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarTarefaComponent implements OnInit {
 
-  constructor() { }
+  tarefas: Tarefa[]
+
+  constructor(private tarefaService: TarefaService) { }
 
   ngOnInit() {
+    this.tarefas = this.tarefaService.findAll()
+  }
+
+  findAll(): Tarefa[] {
+    return this.tarefaService.findAll()
   }
 
 }

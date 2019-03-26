@@ -1,3 +1,40 @@
-<p>
-  listar-tarefa works!
-</p>
+<div class="page-header">
+  <h1>Tarefas</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>Tarefa</td>
+            <td>Concluída</td>
+            <td class="text-center">
+              <a class="btn btn-xs btn-success">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Novo
+              </a>
+            </td>
+          </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let tarefa of tarefas">
+        <td [class.success]="!tarefa.concluida" >{{ tarefa.nome }}</td>
+        <td class="text-center" style="width: 70px">
+          <input type="checkbox" (click)="alterarStatus(tarefa)" [value]="tarefa.id" [checked]="tarefa.concluida">
+        </td>
+        <td class="text-center" style="width: 200px">
+          <a [routerLink]="['/tarefas/editar/' + tarefa.id]" title="Editar" alt="Editar" class="btn btn-xs btn-info">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true">Editar</span>
+          </a>
+
+          <a (click)="remover($event, tarefa)" href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true">Remover</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p *ngIf="tarefas.length == 0">Nenhuma tarefa cadastrada.</p>
