@@ -22,4 +22,10 @@ export class ListarTarefaComponent implements OnInit {
     return this.tarefaService.findAll()
   }
 
+  remover($event: any, tarefa: Tarefa): void {
+    $event.preventDefault()
+    if (confirm('Deseja remover a tarefa"' + tarefa.nome + '"?'))
+    this.tarefaService.delete(tarefa.id)
+    this.tarefas = this.findAll()
+  }
 }
