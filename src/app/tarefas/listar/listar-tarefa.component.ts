@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
-import { Tarefa } from '../shared/tarefa.model';
-import { TarefaService } from '../shared/tarefa.service';
+import { Tarefa } from '../shared/tarefa.model'
+import { TarefaService } from '../shared/tarefa.service'
 
 @Component({
   selector: 'app-listar-tarefa',
