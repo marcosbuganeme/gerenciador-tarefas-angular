@@ -19,9 +19,18 @@
 
     <tbody>
       <tr *ngFor="let tarefa of tarefas">
-        <td [class.success]="!tarefa.concluida" >{{ tarefa.nome }}</td>
+        <td 
+          [tarefaConcluida]="tarefa.concluida" 
+          [class.success]="!tarefa.concluida" >
+          {{ tarefa.nome }}
+      </td>
+
         <td class="text-center" style="width: 70px">
-          <input type="checkbox" (click)="updateStatus(tarefa)" [value]="tarefa.id" [checked]="tarefa.concluida">
+          <input 
+            type="checkbox" 
+            [value]="tarefa.id" 
+            [checked]="tarefa.concluida"
+            (click)="updateStatus(tarefa)">
         </td>
         <td class="text-center" style="width: 200px">
           <a [routerLink]="['/tarefas/editar/', tarefa.id]" title="Editar" alt="Editar" class="btn btn-xs btn-info">
