@@ -28,4 +28,10 @@ export class ListarTarefaComponent implements OnInit {
     this.tarefaService.delete(tarefa.id)
     this.tarefas = this.findAll()
   }
+
+  updateStatus(tarefa: Tarefa): void {
+    if (confirm('Deseja alterar o status da tarefa "' + tarefa.nome + '"?'))
+      this.tarefaService.updateStatus(tarefa.id)
+      this.tarefas = this.findAll()
+  }
 }
