@@ -1,3 +1,23 @@
-<p>
-  cadastrar-tarefa works!
-</p>
+<h1>Cadastrar tarefa</h1>
+
+<div class="well">
+  <form>
+    <div class="from-group">
+      <label></label>
+      <input type="text" class="form-control" id="nome" name="nome" minlength="5" required>
+
+      <div class="alert alert-danger">
+        <div>Digite a tarefa.</div>
+        <div>Tarefa deve conter ao menos 5 caracteres.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" class="btn btn-success" value="Cadastrar">
+      <a class="btn btn-default">
+        <span class="glyphonicon glyphonicon-chevron-left" aria-hidden="true"></span>
+        Voltar
+      </a>
+    </div>
+  </form>
+</div>
