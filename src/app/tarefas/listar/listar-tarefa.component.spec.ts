@@ -19,7 +19,7 @@ describe('ListarTarefaComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('deve criar o componente de listagem', () => {
     expect(component).toBeTruthy();
   });
 });

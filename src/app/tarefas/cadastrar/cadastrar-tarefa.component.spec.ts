@@ -13,13 +13,7 @@ describe('CadastrarTarefaComponent', () => {
     .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CadastrarTarefaComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
+  it('deve criar componente de cadastro', () => {
     expect(component).toBeTruthy();
   });
 });

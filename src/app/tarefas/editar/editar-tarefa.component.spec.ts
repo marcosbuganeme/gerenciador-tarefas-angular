@@ -13,13 +13,7 @@ describe('EditarTarefaComponent', () => {
     .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(EditarTarefaComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
+  it('deve criar o componente de edição', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -8,10 +8,11 @@ export class TarefaConcluidaDirective implements OnInit {
   @Input()
   tarefaConcluida: boolean
 
-  constructor(private renderer2: Renderer2) { }
+  constructor(private renderer2: Renderer2, 
+              private el: ElementRef) {}
 
   ngOnInit() {
     if (this.tarefaConcluida)
-      this.renderer2.createElement("text-decoration", "line-throught")
+      this.renderer2.setStyle(this.el.nativeElement, "text-decoration", "line-through")
   }
 }
